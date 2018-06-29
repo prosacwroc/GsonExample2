@@ -14,11 +14,16 @@ public class Main extends Person {
             Janusz.hobby = "Somsiad";
         }
 
-        Gson json = new Gson();
+        {
+            Gson json = new Gson();
 
-        String response = json.toJson(Janusz);
-        System.out.println(response);
+            String response = json.toJson(Janusz);
+            System.out.println(response);
 
+            Person Janusz1 = json.fromJson(response, Person.class);
+            System.out.println(Janusz1.getName()+ Janusz1.getAge());
+
+        }
 
     }
 }
